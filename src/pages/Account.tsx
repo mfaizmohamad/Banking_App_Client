@@ -24,7 +24,7 @@ const Account = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:8080/api/accounts/${id}`, {
+      const response = await fetch(`https://banking-app-server.onrender.com/api/accounts/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

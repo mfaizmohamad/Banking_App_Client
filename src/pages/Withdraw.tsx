@@ -57,7 +57,7 @@ const Withdraw = () => {
     const token = sessionStorage.getItem("jwtToken");
     const id = sessionStorage.getItem("id");
     const response = await fetch(
-      `http://localhost:8080/api/accounts/${id}/withdraw`,
+      `https://banking-app-server.onrender.com/api/accounts/${id}/withdraw`,
       {
         method: "PUT",
         headers: {

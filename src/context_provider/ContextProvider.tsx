@@ -35,21 +35,21 @@ const ContextProvider: React.FC<ContextProviderProps> = (props) => {
   const [resultData, setResultData] = useState<string>("");
   const [id, setId] = useState<number>();
 
-  const delayPara = (index: number, nextWord: string) => {
-    setTimeout(() => {
-      setResultData((prev) => prev + nextWord);
-    }, 75 * index);
-  };
+  // const delayPara = (index: number, nextWord: string) => {
+  //   setTimeout(() => {
+  //     setResultData((prev) => prev + nextWord);
+  //   }, 75 * index);
+  // };
 
   const newChat = () => {
     setLoading(false);
     setShowResult(false);
   };
 
-  const onSent = async (prompt?: string) => {
-    setResultData("");
-    setLoading(true);
-    setShowResult(true);
+  const onSent = async (_prompt?: string) => {
+  //   setResultData("");
+  //   setLoading(true);
+  //   setShowResult(true);
 
     // let response: string;
     // if (prompt !== undefined) {

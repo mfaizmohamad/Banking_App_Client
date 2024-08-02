@@ -57,7 +57,7 @@ const Deposit = () => {
     const token = sessionStorage.getItem("jwtToken");
     const id = sessionStorage.getItem("id");
     const response = await fetch(
-      `http://localhost:8080/api/accounts/${id}/deposit`,
+      `https://banking-app-server.onrender.com/api/accounts/${id}/deposit`,
       {
         method: "PUT",
         headers: {
