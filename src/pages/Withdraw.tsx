@@ -72,7 +72,7 @@ const Withdraw = () => {
 
   return (
     <div className="grid gap-5 justify-center mt-10">
-        {balance && <div className="absolute mt-[-13rem] ml-[15.7rem]"><Account/></div>}
+        {balance && <div className="absolute mt-[-13rem] ml-[-10.7rem]"><Account/></div>}
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="flex items-center border-b border-teal-500 py-2">
           <input
