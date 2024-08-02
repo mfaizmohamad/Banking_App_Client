@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import routingPath from "../routing/Router_Path";
+import Logo from "../assets/hero/logo.png";
 
 interface FormData {
   login: string;
@@ -41,13 +42,16 @@ const Login = () => {
 
   const postQuestion = async (payload: FormData) => {
     try {
-      const response = await fetch("https://banking-app-server.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "https://banking-app-server.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -73,12 +77,15 @@ const Login = () => {
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white bg-opacity-80  rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 className="mb-4 text-center text-2xl font-extrabold text-black dark:text-white md:text-2xl lg:text-3xl">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-                My
-              </span>{" "}
-              Bank
-            </h1>
+            <div className="flex justify-center">
+              <h1 className="mb-4 text-center text-2xl font-extrabold text-black dark:text-white md:text-2xl lg:text-3xl">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                  My
+                </span>{" "}
+                Bank
+              </h1>
+              <img src={Logo} alt="" className="h-20 mt-[-2rem]" />
+            </div>
             <form
               className="space-y-4 md:space-y-6"
               action="#"
