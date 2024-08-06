@@ -1,8 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { GiPayMoney } from "react-icons/gi";
-import Account from "./Account";
+import { GiReceiveMoney } from "react-icons/gi";
 
 interface FormData {
   amount: number;
@@ -14,10 +13,9 @@ interface AccountData {
   balance: number;
 }
 
-const Withdraw = () => {
+const Deposit = () => {
   const [formData, setFormData] = useState<FormData>({ amount: 0 });
   const [account, setAccount] = useState<AccountData | null>(null);
-  const [balance, setBalance] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,13 +38,12 @@ const Withdraw = () => {
           setAccount(null);
         }
         console.log(data);
-        setBalance(true);
-        console.log("Withdraw successful!");
-        toast.success("Withdraw successful!");
+        console.log("Deposit successful!");
+        toast.success("Deposit successful!");
         setFormData({ amount: 0 });
       } else {
-        console.log("Failed to withdraw.");
-        toast.error("Failed to withdraw.");
+        console.log("Failed to deposit.");
+        toast.error("Failed to deposit.");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -57,7 +54,8 @@ const Withdraw = () => {
     const token = sessionStorage.getItem("jwtToken");
     const id = sessionStorage.getItem("id");
     const response = await fetch(
-      `https://banking-app-server.onrender.com/api/accounts/${id}/withdraw`,
+      `https://banking-app-server.onrender.com/api/accounts/${id}/deposit`,
+      // `http://localhost:8080/api/accounts/${id}/deposit`,
       {
         method: "PUT",
         headers: {
@@ -72,7 +70,6 @@ const Withdraw = () => {
 
   return (
     <div className="grid gap-5 justify-center mt-10">
-        {balance && <div className="absolute mt-[-13rem] ml-[-10.7rem]"><Account/></div>}
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="flex items-center border-b border-teal-500 py-2">
           <input
@@ -88,7 +85,7 @@ const Withdraw = () => {
             className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
             type="submit"
           >
-            Withdraw
+            Deposit
           </button>
           <button
             className="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded"
@@ -100,7 +97,7 @@ const Withdraw = () => {
         </div>
       </form>
       <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <GiPayMoney className="text-[3rem]"/>
+        <GiReceiveMoney  className="text-[3rem]"/>
         <a href="#">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
             New Balance
@@ -126,4 +123,4 @@ const Withdraw = () => {
   );
 };
 
-export default Withdraw;
+export default Deposit;

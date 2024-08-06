@@ -24,7 +24,10 @@ const Account = () => {
         return;
       }
 
-      const response = await fetch(`https://banking-app-server.onrender.com/api/accounts/${id}`, {
+      const response = await fetch(
+        `https://banking-app-server.onrender.com/api/accounts/${id}`
+        // `http://localhost:8080/api/accounts/${id}`
+        , {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -64,11 +67,16 @@ const Account = () => {
           <p>Loading...</p>
         </div>
       ) : account ? (
-        <div className="grid justify-center mt-10">
-          <div className="shadow-md pr-[10rem] pl-5 py-5 rounded-md text-white bg-yellow-400">
+        <div className="grid justify-center gap-5 mt-10">
+          <div className="shadow-md pr-[30rem] pl-5 py-5 rounded-md text-white bg-yellow-400">
             <p className="font-bold">Saving Accounts</p>
             <p className="text-sm mb-5">{account.accountHolderName}</p>
             <p>RM {account.balance}</p>
+          </div>
+          <div className="shadow-md pr-[30rem] pl-5 py-5 rounded-md text-black bg-gray-300">
+            <p className="font-bold">MAE</p>
+            <p className="text-sm mb-5">{account.accountHolderName}</p>
+            <p>RM 0.00</p>
           </div>
         </div>
       ) : (

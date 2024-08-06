@@ -1,5 +1,6 @@
 import Login from "../auth/Login";
 import Home from "../pages/Home";
+import OnlineBanking from "../pages/OnlineBanking";
 
 let routing = [
     {
@@ -9,6 +10,10 @@ let routing = [
     {
         path: "/home",
         element: <Home/>,
+    },
+    {
+        path: "/online_banking",
+        element: <OnlineBanking/>,
     }
 ];
 

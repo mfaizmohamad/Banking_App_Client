@@ -1,12 +1,12 @@
 import React from "react";
-import Account from "./Account"
-import Banner from "./Banner"
+import Account from "./Account";
+import Banner from "./Banner";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import Img1 from "../assets/hero/logo.png"
-import Deposit from "./Deposit";
-import Withdraw from "./Withdraw";
+import Img1 from "../assets/hero/logo.png";
+import Footer from "../component/Footer";
+import Header from "../component/Header";
 
 const BannerData = {
   discount: "30",
@@ -30,17 +30,15 @@ const Home = () => {
     });
     Aos.refresh();
   }, []);
-  
+
   return (
     <>
-      <Banner data={BannerData}/>
-      <Account/>
-      <div className="flex gap-10 justify-center">
-        <Deposit/>
-        <Withdraw/>
-      </div>
+      <Header/>
+      <Banner data={BannerData} />
+      <Account />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

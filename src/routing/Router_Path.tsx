@@ -1,5 +1,6 @@
 enum routingPath {
     login = "/",
-    home = "/home"
+    home = "/home",
+    onlineBanking = "/online_banking"
 }
 export default routingPath;

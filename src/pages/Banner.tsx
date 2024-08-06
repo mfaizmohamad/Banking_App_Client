@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import routingPath from "../routing/Router_Path";
+
 interface BannerProps {
     data: {
       discount: string;
@@ -10,8 +13,17 @@ interface BannerProps {
       bgColor: string;
     };
   }
+
+
   
   const Banner: React.FC<BannerProps> = ({ data }) => {
+
+    const navigate = useNavigate();
+
+    function Redirect() {
+      navigate(routingPath.onlineBanking);
+    }
+
     return (
       <div className="flex justify-center items-center py-12">
         <div className="container">
@@ -55,6 +67,7 @@ interface BannerProps {
                 <button
                   style={{ color: data.bgColor }}
                   className="bg-white py-2 px-4 rounded-full"
+                  onClick={Redirect}
                 >
                   Online Banking
                 </button>
