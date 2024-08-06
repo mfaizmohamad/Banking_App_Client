@@ -9,10 +9,6 @@ const BreadCrumb = () => {
     navigate(routingPath.home);
   }
 
-  function handleRedirect2(e: { preventDefault: () => void; }) {
-    e.preventDefault();
-    navigate(routingPath.onlineBanking);
-  }
   return (
     <div>
       <nav className="flex" aria-label="Breadcrumb">
