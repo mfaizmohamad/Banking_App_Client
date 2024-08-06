@@ -22,6 +22,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { useNavigate } from 'react-router-dom'
+import routingPath from '../routing/Router_Path'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -37,6 +39,12 @@ const callsToAction = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigate = useNavigate();
+
+  function handleRedirect(e: { preventDefault: () => void; }) {
+    e.preventDefault();
+    navigate(routingPath.login);
+  }
 
   return (
     <header className="bg-white">
@@ -113,7 +121,7 @@ export default function Header() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
+          <a onClick={handleRedirect} className="text-sm font-semibold leading-6 text-gray-900">
             Log Out <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -181,7 +189,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <a
-                  href="/"
+                  onClick={handleRedirect} 
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log Out
