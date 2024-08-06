@@ -24,9 +24,9 @@ const Account = () => {
         return;
       }
 
+      const apiUrl = import.meta.env.VITE_API_BASE_URL + `/api/accounts/${id}`;
       const response = await fetch(
-        `https://banking-app-server.onrender.com/api/accounts/${id}`
-        // `http://localhost:8080/api/accounts/${id}`
+        apiUrl
         , {
         method: "GET",
         headers: {

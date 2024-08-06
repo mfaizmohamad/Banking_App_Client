@@ -51,11 +51,12 @@ const Deposit = () => {
   };
 
   const postQuestion = async (payload: FormData) => {
+    
     const token = sessionStorage.getItem("jwtToken");
     const id = sessionStorage.getItem("id");
+    const apiUrl = import.meta.env.VITE_API_BASE_URL + `/api/accounts/${id}/deposit`;
     const response = await fetch(
-      `https://banking-app-server.onrender.com/api/accounts/${id}/deposit`,
-      // `http://localhost:8080/api/accounts/${id}/deposit`,
+      apiUrl,
       {
         method: "PUT",
         headers: {
@@ -97,7 +98,7 @@ const Deposit = () => {
         </div>
       </form>
       <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <GiReceiveMoney  className="text-[3rem]"/>
+        <GiReceiveMoney className="text-[3rem]" />
         <a href="#">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
             New Balance

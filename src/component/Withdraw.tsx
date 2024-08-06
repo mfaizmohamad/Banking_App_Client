@@ -53,9 +53,9 @@ const Withdraw = () => {
   const postQuestion = async (payload: FormData) => {
     const token = sessionStorage.getItem("jwtToken");
     const id = sessionStorage.getItem("id");
+    const apiUrl = import.meta.env.VITE_API_BASE_URL + `/api/accounts/${id}/withdraw`;
     const response = await fetch(
-      `https://banking-app-server.onrender.com/api/accounts/${id}/withdraw`,
-      // `http://localhost:8080/api/accounts/${id}/withdraw`,
+      apiUrl,
       {
         method: "PUT",
         headers: {

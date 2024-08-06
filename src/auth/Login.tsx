@@ -41,10 +41,10 @@ const Login = () => {
   };
 
   const postQuestion = async (payload: FormData) => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL + "/api/auth/login";
     try {
       const response = await fetch(
-        "https://banking-app-server.onrender.com/api/auth/login",
-        // "http://localhost:8080/api/auth/login",
+        apiUrl,
         {
           method: "POST",
           headers: {
