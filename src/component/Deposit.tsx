@@ -16,6 +16,7 @@ interface AccountData {
 const Deposit = () => {
   const [formData, setFormData] = useState<FormData>({ amount: 0 });
   const [account, setAccount] = useState<AccountData | null>(null);
+  const [deposit, setDeposit] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,6 +41,7 @@ const Deposit = () => {
         console.log(data);
         console.log("Deposit successful!");
         toast.success("Deposit successful!");
+        setDeposit(true);
         setFormData({ amount: 0 });
       } else {
         console.log("Failed to deposit.");
@@ -70,7 +72,7 @@ const Deposit = () => {
   };
 
   return (
-    <div className="grid gap-5 justify-center mt-10">
+    <div  className="grid gap-5 justify-center mt-10">
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="flex items-center border-b border-teal-500 py-2">
           <input
@@ -97,8 +99,8 @@ const Deposit = () => {
           </button>
         </div>
       </form>
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <GiReceiveMoney className="text-[3rem]" />
+      <div  className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        {deposit && <GiReceiveMoney data-aos="fade-up" className="text-[3rem]" />}
         <a href="#">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
             New Balance

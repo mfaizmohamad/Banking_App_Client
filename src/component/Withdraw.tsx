@@ -16,6 +16,7 @@ interface AccountData {
 const Withdraw = () => {
   const [formData, setFormData] = useState<FormData>({ amount: 0 });
   const [account, setAccount] = useState<AccountData | null>(null);
+  const [withdraw, setWithdraw] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,6 +41,7 @@ const Withdraw = () => {
         console.log(data);
         console.log("Withdraw successful!");
         toast.success("Withdraw successful!");
+        setWithdraw(true);
         setFormData({ amount: 0 });
       } else {
         console.log("Failed to withdraw.");
@@ -96,8 +98,8 @@ const Withdraw = () => {
           </button>
         </div>
       </form>
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <GiPayMoney className="text-[3rem]"/>
+      <div  className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        {withdraw && <GiPayMoney data-aos="fade-down" className="text-[3rem]"/>}
         <a href="#">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
             New Balance

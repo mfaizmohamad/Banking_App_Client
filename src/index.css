@@ -40,3 +40,7 @@
       max-width: 100% !important;
       width: 100% !important;
     }
+
+    .custom-bg {
+      background-image: url('../src/assets/bg.jpg');
+    }

@@ -71,12 +71,12 @@ const CardTab = () => {
         </ul>
         <div id="fullWidthTabContent" className="border-t border-gray-200 dark:border-gray-600">
           {selectedTab === 'stats' && (
-            <div id="stats" role="tabpanel" aria-labelledby="stats-tab" className="p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800">
+            <div id="stats" role="tabpanel" aria-labelledby="stats-tab" className="p-4 mb-10 bg-white rounded-lg md:p-8 dark:bg-gray-800">
               <Deposit />
             </div>
           )}
           {selectedTab === 'services' && (
-            <div id="about" role="tabpanel" aria-labelledby="about-tab" className="p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800">
+            <div id="about" role="tabpanel" aria-labelledby="about-tab" className="p-4 mb-10 bg-white rounded-lg md:p-8 dark:bg-gray-800">
               <Withdraw />
             </div>
           )}
