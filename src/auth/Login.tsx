@@ -84,18 +84,18 @@ const Login = () => {
   return (
     <section className="custom-bg bg-cover bg-center bg-no-repeat h-screen">
       <HeaderAuth />
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-[30rem] md:h-screen lg:py-0">
         <div className="w-full rounded-lg md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 mt-[-15rem] space-y-4 md:space-y-6 sm:p-8">
             {invalid && (
-              <div className="flex justify-center mb-5 mt-[-5rem]">
+              <div className="flex justify-center mb-5 sm:mt-[-5rem]">
                 <div className="bg-[#f8d7da] text-center text-red-700 w-[24rem] py-5 rounded-md">
                   <p>Invalid username or password.</p>
                 </div>
               </div>
             )}
             <form
-              className="space-y-4 md:space-y-6"
+              className="space-y-4 md:space-y-6 sm:mt-0 mt-[10rem]"
               onSubmit={handleUsernameSubmit}
               onInvalid={(e) => {
                 inputError(e);
@@ -117,7 +117,7 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="h-[3.3rem] flex text-black bg-yellow-400 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-r-lg text-sm px-5 py-2.5 text-center"
+                  className="h-[3.5rem] sm:h-[3.3rem] flex text-black bg-yellow-400 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-r-lg text-sm px-5 py-2.5 text-center"
                 >
                   <MdLockOutline className="mr-2 text-[1.5rem]" />
                   <span className="inline-block mt-1">LOGIN</span>
@@ -132,7 +132,7 @@ const Login = () => {
                 className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full flex"
               >
                 <div className="relative p-4 w-full max-w-md max-h-full">
-                  <div className="relative w-[40rem] h-[20rem] ml-[-10rem] opacity-95 bg-white rounded-lg shadow dark:bg-gray-700">
+                  <div className="relative sm:w-[40rem] sm:h-[20rem] sm:ml-[-10rem] opacity-95 bg-white rounded-lg shadow dark:bg-gray-700">
                     <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                         Please insert your password

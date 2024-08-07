@@ -69,12 +69,12 @@ const Account = () => {
         </div>
       ) : account ? (
         <div className="grid justify-center gap-5 mt-10">
-          <div data-aos="fade-in" className="shadow-md pr-[30rem] pl-5 py-5 rounded-md text-white bg-yellow-400">
+          <div data-aos="fade-in" className="shadow-md sm:pr-[30rem] pr-[10rem] pl-5 py-5 rounded-md text-white bg-yellow-400">
             <p className="font-bold">Saving Accounts</p>
             <p className="text-sm mb-5">{account.accountHolderName}</p>
             <p>RM {account.balance}</p>
           </div>
-          <div data-aos="fade-in" className="shadow-md mb-10 pr-[30rem] pl-5 py-5 rounded-md text-black bg-gray-300">
+          <div data-aos="fade-in" className="shadow-md mb-10 sm:pr-[30rem] pr-[10rem] pl-5 py-5 rounded-md text-black bg-gray-300">
             <p className="font-bold">MAE</p>
             <p className="text-sm mb-5">{account.accountHolderName}</p>
             <p>RM 0.00</p>
