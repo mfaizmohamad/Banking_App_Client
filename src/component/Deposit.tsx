@@ -72,7 +72,7 @@ const Deposit = () => {
   };
 
   return (
-    <div  className="grid gap-5 justify-center mt-10">
+    <div  className="grid gap-5 justify-center mt-16">
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="flex items-center border-b border-teal-500 py-2">
           <input

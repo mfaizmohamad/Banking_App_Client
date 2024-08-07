@@ -50,14 +50,14 @@ export default function HeaderAuth() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-        <div className="flex justify-center">
+          <div className="flex justify-center">
               <h1 className="mb-4 text-center text-2xl font-extrabold text-black dark:text-white md:text-2xl lg:text-3xl">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   My
                 </span>{" "}
                 Bank
               </h1>
-            </div>
+          </div>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -125,8 +125,8 @@ export default function HeaderAuth() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a onClick={handleRedirect} className="text-sm font-semibold leading-6 text-gray-900">
-           Sign Up <span aria-hidden="true">&rarr;</span>
+          <a onClick={handleRedirect} className="text-sm cursor-pointer font-semibold leading-6 text-gray-900">
+           Register Now <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
