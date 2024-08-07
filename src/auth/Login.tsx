@@ -6,7 +6,6 @@ import routingPath from "../routing/Router_Path";
 import { errorListner, inputError } from "../utils/Input_error";
 import HeaderAuth from "../component/HeaderAuth";
 
-import Bg from "../assets/bg.jpg";
 
 interface FormData {
   login: string;
